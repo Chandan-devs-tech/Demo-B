@@ -39,3 +39,37 @@ function addBook() {
 }
 
 addBtn.addEventListener('click', addBook);
+
+const title2 = document.querySelector('.title');
+const author2 = document.querySelector('.author');
+function storeLocalStorage() {
+  const bookInfo = {
+    bookTitle: title2.value,
+    bookAuthor: author2.value,
+  };
+  localStorage.setItem('bookInformation', JSON.stringify(bookInfo));
+}
+title2.addEventListener('focusout', storeLocalStorage);
+author2.addEventListener('focusout', storeLocalStorage);
+// Get Items from local storage
+const getBookInfo = JSON.parse(localStorage.getItem('bookInformation'));
+if (getBookInfo) {
+  title2.value = getBookInfo.bookTitle;
+  author2.value = getBookInfo.bookAuthor;
+}const title2 = document.querySelector('.title');
+const author2 = document.querySelector('.author');
+function storeLocalStorage() {
+  const bookInfo = {
+    bookTitle: title2.value,
+    bookAuthor: author2.value,
+  };
+  localStorage.setItem('bookInformation', JSON.stringify(bookInfo));
+}
+title2.addEventListener('focusout', storeLocalStorage);
+author2.addEventListener('focusout', storeLocalStorage);
+// Get Items from local storage
+const getBookInfo = JSON.parse(localStorage.getItem('bookInformation'));
+if (getBookInfo) {
+  title2.value = getBookInfo.bookTitle;
+  author2.value = getBookInfo.bookAuthor;
+}
